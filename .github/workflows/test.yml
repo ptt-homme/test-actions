@@ -14,10 +14,10 @@ jobs:
     - name: Cache PHP packages
       uses: actions/cache@v1
       with:
-        path: vendor/
-        key: ${{ runner.os }}-package.json-${{ hashFiles('package-lock.json') }}
+        path: vendor
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
-          ${{ runner.os }}-package.json-
+          ${{ runner.os }}-composer-
     - name: Generate key
       run: php artisan key:generate
     - name: Create DB and schemas
