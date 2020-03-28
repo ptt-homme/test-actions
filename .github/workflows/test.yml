@@ -7,6 +7,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Copy ENV Laravel Configuration for CI
       run: php -r "file_exists('.env') || copy('.env.ci', '.env');"
+    - name: PHP Security Checker
+      uses: StephaneBour/actions-php-security-checker@1.0
     - name: Install Dependencies (PHP vendors)
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
     - name: Generate key
