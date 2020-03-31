@@ -24,8 +24,6 @@ jobs:
         key: ${{ runner.os }}-composer-${{ matrix.php-versions }}-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
           ${{ runner.os }}-composer-${{ matrix.php-versions }}-
-    - name: PHPCodeSniffer
-      uses: rtCamp/action-phpcs-inspection@v1.0.0
     - name: PHPCS check
       uses: chekalsky/phpcs-action@v1
     - name: Install Dependencies (PHP vendors)
