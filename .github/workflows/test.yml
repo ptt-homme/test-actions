@@ -26,6 +26,8 @@ jobs:
           ${{ runner.os }}-composer-${{ matrix.php-versions }}-
     - name: PHPCodeSniffer
       uses: rtCamp/action-phpcs-inspection@v1.0.0
+    - name: PHPCS check
+      uses: chekalsky/phpcs-action@v1
     - name: Install Dependencies (PHP vendors)
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
     - name: Generate key
